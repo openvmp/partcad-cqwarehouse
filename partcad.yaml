@@ -1,0 +1,9 @@
+desc: cq-warehouse
+url: https://cq-warehouse.readthedocs.io/
+import:
+  cq-warehouse-metric:
+    type: local
+    path: metric.yaml
+  cq-warehouse-imperial:
+    type: local
+    path: imperial.yaml
