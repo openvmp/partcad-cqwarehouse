@@ -2,6 +2,7 @@ desc: cq-warehouse-metric
 url: https://cq-warehouse.readthedocs.io/
 parts:
   fastener/screw-buttonhead:
+    type: cadquery
     parameters:
       size:
         type: str
