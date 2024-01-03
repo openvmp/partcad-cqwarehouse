@@ -1,5 +1,5 @@
-# if __name__ != "__cqgi__":
-#     from cq_server.ui import ui, show_object
+if __name__ != "__cqgi__":
+    from cq_server.ui import ui, show_object
 
 from cq_warehouse.fastener import (
     ButtonHeadScrew,
