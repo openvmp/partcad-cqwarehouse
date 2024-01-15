@@ -1,0 +1,43 @@
+{%- macro list_sizes(all_sizes, available_sizes) -%}
+{%- for num, text in sizes -%}
+{%- if num in available_sizes -%}
+- "{{ text }}"
+{% endif -%}
+{%- endfor -%}
+{%- endmacro -%}
+
+{%- macro screw_params(all_sizes, available_sizes) -%}
+      size:
+        type: str
+        enum:
+          {{ list_sizes(all_sizes, available_sizes) | indent(10) }}
+        default: {{ all_sizes[available_sizes[0]] }}
+      simple:
+        type: bool
+        default: False
+      length:
+        type: int
+        default: 10
+      hand:
+        type: str
+        enum: ["left","right"]
+        default: right
+{%- endmacro -%}
+
+{%- macro screw_params2(sizes) -%}
+      size:
+        type: str
+        enum:
+          {{ sizes }}
+        default: {{ sizes[0] }}
+      simple:
+        type: bool
+        default: False
+      length:
+        type: int
+        default: 10
+      hand:
+        type: str
+        enum: ["left","right"]
+        default: right
+{%- endmacro -%}

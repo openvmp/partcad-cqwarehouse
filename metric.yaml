@@ -1,20 +1,212 @@
 desc: Metric parts by cq-warehouse
 url: https://cq-warehouse.readthedocs.io/
+partcad: ">=0.2.17"
+
+{% from 'macros.j2' import list_sizes, screw_params %}
+
+{%- set metric_sizes = {
+  1: "M1-0.25",
+  1.2: "M1.2-0.25",
+  1.4: "M1.4-0.3",
+  1.6: "M1.6-0.35",
+  2: "M2-0.4",
+  2.5: "M2.5-0.45",
+  3: "M3-0.5",
+  3.5: "M3.5-0.6",
+  4: "M4-0.7",
+  5: "M5-0.8",
+  6: "M6-1",
+  8: "M8-1.25",
+  10: "M10-1.5",
+  12: "M12-1.75",
+  14: "M14-2",
+  16: "M16-2",
+  18: "M18-2.5",
+  20: "M20-2.5",
+  22: "M22-2.5",
+  24: "M24-3",
+  27: "M27-3",
+  30: "M30-3.5",
+  33: "M33-3.5",
+  36: "M36-4",
+  39: "M39-4",
+  42: "M42-4.5",
+  45: "M45-4.5",
+  48: "M48-5",
+  52: "M52-5",
+  56: "M56-5.5",
+  60: "M60-5.5",
+  64: "M64-6",
+} -%}
+
+
 parts:
-  fastener/screw-buttonhead:
+  fastener/buttonhead-iso7380-1:
     type: cadquery
+    aliases:
+      - fastener/iso7380-1
     parameters:
-      size:
-        type: str
-        enum:
-          - M3-0.5
-          - M4-0.7
-          - M5-0.8
-          - M6-1
-          - M8-1.25
-          - M10-1.5
-          - M12-1.75
-          - M16-2
-      simple:
-        type: bool
-        default: False
+      {{ screw_params(metric_sizes, [3,4,5,6,8,10,12,16]) }}
+  fastener/buttonheadwithcollar-iso7380-2:
+    type: cadquery
+    aliases:
+      - fastener/iso7380-2
+    parameters:
+      {{ screw_params(metric_sizes, [3,4,5,6,8,10,12,16]) }}
+  fastener/cheesehead-iso1207:
+    type: cadquery
+    aliases:
+      - screw/iso1207
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/cheesehead-iso7048:
+    type: cadquery
+    aliases:
+      - fastener/iso7048
+    parameters:
+      {{ screw_params(metric_sizes, [2.5,3,3.5,4,5,6,8]) }}
+  fastener/cheesehead-iso14580:
+    type: cadquery
+    aliases:
+      - fastener/iso14580
+    parameters:
+      {{ screw_params(metric_sizes, [2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/countersunk-iso7046:
+    type: cadquery
+    aliases:
+      - fastener/iso7046
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/countersunk-iso7046:
+    type: cadquery
+    aliases:
+      - fastener/iso7046
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/countersunk-iso14582:
+    type: cadquery
+    aliases:
+      - fastener/iso14582
+    parameters:
+      {{ screw_params(metric_sizes, [3,4,5,6,8,10]) }}
+  fastener/countersunk-iso2009:
+    type: cadquery
+    aliases:
+      - fastener/iso2009
+    parameters:
+      {{ screw_params(metric_sizes, [1,1.2,1.4,1.6,2,2.5,3,3.5,4,5,6,8,10,12,14,16,18,20]) }}
+  fastener/countersunk-iso10642:
+    type: cadquery
+    aliases:
+      - fastener/iso10642
+    parameters:
+      {{ screw_params(metric_sizes, [3,4,5,6,8,10,12,14,16,18,20,22,24]) }}
+  fastener/countersunk-iso14581:
+    type: cadquery
+    aliases:
+      - fastener/iso14581
+    parameters:
+      {{ screw_params(metric_sizes, [2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/hexhead-din931:
+    type: cadquery
+    aliases:
+      - fastener/din931
+    parameters:
+      {{ screw_params(metric_sizes, [3,4,5,6,8,10,12,14,16,18,20,22,24,27,30,36,42,48,56,64]) }}
+  fastener/hexhead-iso4014:
+    type: cadquery
+    aliases:
+      - fastener/iso4014
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10,12,14,16,18,20,22,24,27,30,33,36,39,42,45,48,52,56,60,64]) }}
+      socket_clearance:
+        type: int
+        default: 6
+  fastener/hexhead-iso4017:
+    type: cadquery
+    aliases:
+      - fastener/iso4017
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10,12,14,16,18,20,22,24,27,30,33,36,39,42,45,48,52,56,60,64]) }}
+      socket_clearance:
+        type: int
+        default: 6
+  fastener/hexheadwithflange-din1662:
+    type: cadquery
+    aliases:
+      - fastener/din1662
+    parameters:
+      {{ screw_params(metric_sizes, [5,6,8,10,12,14,16]) }}
+      socket_clearance:
+        type: int
+        default: 6
+  fastener/hexheadwithflange-din1665:
+    type: cadquery
+    aliases:
+      - fastener/din1665
+    parameters:
+      {{ screw_params(metric_sizes, [5,6,8,10,12,14,16,20]) }}
+      socket_clearance:
+        type: int
+        default: 6
+  fastener/panhead-iso14583:
+    type: cadquery
+    aliases:
+      - fastener/iso14583
+    parameters:
+      {{ screw_params(metric_sizes, [2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/panhead-iso1580:
+    type: cadquery
+    aliases:
+      - fastener/iso1580
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/panheadwithcollar-din967:
+    type: cadquery
+    aliases:
+      - fastener/din967
+    parameters:
+      {{ screw_params(metric_sizes, [3,3.5,4,5,6,8]) }}
+  fastener/raisedcheesehead-iso7045:
+    type: cadquery
+    aliases:
+      - fastener/iso7045
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/raisedcountersunkovalhead-iso14584:
+    type: cadquery
+    aliases:
+      - fastener/iso14584
+    parameters:
+      {{ screw_params(metric_sizes, [2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/raisedcountersunkovalhead-iso7047:
+    type: cadquery
+    aliases:
+      - fastener/iso7047
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/raisedcountersunkovalhead-iso2010:
+    type: cadquery
+    aliases:
+      - fastener/iso2010
+    parameters:
+      {{ screw_params(metric_sizes, [1,1.2,1.4,1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
+  fastener/set-iso4026:
+    type: cadquery
+    aliases:
+      - fastener/iso4026
+    parameters:
+      {{ screw_params(metric_sizes, [1.4,1.6,2,2.5,3,3.5,4,5,6,8,10,12,14,16,20,24,30,36,42,48,56,64]) }}
+  fastener/socketheadcap-iso4762:
+    type: cadquery
+    aliases:
+      - fastener/iso4762
+    parameters:
+      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10,12,14,16,18,20,22,24]) }}
+
+render:
+  png:
+    prefix: ./
+    width: 128
+    height: 128
+  markdown: README.md
