@@ -1,6 +1,7 @@
 desc: cq-warehouse
 url: https://cq-warehouse.readthedocs.io/
 partcad: ">=0.2.0"
+pythonVersion: 3.10
 import:
   cq-warehouse-metric:
     type: local

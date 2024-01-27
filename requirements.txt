@@ -1,1 +1,1 @@
--e git+https://github.com/gumyr/cq_warehouse.git@v0.8.0#egg=cq_warehouse
+git+https://github.com/gumyr/cq_warehouse.git@v0.8.0#egg=cq_warehouse
