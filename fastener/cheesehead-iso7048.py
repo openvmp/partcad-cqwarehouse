@@ -5,12 +5,9 @@ from cq_warehouse.fastener import (
     CheeseHeadScrew,
 )
 
-if not "size" in locals():
-    size = "M2.5-0.45"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
+size = "M2.5-0.45"
+simple = False
+length = 10
 
 screw = CheeseHeadScrew(
     size=size,

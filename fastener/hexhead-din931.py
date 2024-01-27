@@ -5,14 +5,10 @@ from cq_warehouse.fastener import (
     HexHeadScrew,
 )
 
-if not "size" in locals():
-    size = "M3-0.5"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
-if not "socket_clearance" in locals():
-    socket_clearance = 6
+size = "M3-0.5"
+simple = False
+length = 10
+socket_clearance = 6
 
 screw = HexHeadScrew(
     size=size,

@@ -5,12 +5,9 @@ from cq_warehouse.fastener import (
     CounterSunkScrew,
 )
 
-if not "size" in locals():
-    size = "M2-0.4"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
+size = "M2-0.4"
+simple = False
+length = 10
 
 screw = CounterSunkScrew(
     size=size,

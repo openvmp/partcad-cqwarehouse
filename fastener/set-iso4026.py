@@ -5,12 +5,9 @@ from cq_warehouse.fastener import (
     SetScrew,
 )
 
-if not "size" in locals():
-    size = "M1.4-0.3"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
+size = "M1.4-0.3"
+simple = False
+length = 10
 
 screw = SetScrew(
     size=size,

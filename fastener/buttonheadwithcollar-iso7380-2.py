@@ -5,12 +5,9 @@ from cq_warehouse.fastener import (
     ButtonHeadWithCollarScrew,
 )
 
-if not "size" in locals():
-    size = "M6-1"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
+size = "M6-1"
+simple = False
+length = 10
 
 screw = ButtonHeadWithCollarScrew(
     size=size,

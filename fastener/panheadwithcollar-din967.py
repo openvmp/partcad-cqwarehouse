@@ -5,12 +5,9 @@ from cq_warehouse.fastener import (
     PanHeadWithCollarScrew,
 )
 
-if not "size" in locals():
-    size = "M3-0.5"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
+size = "M3-0.5"
+simple = False
+length = 10
 
 screw = PanHeadWithCollarScrew(
     size=size,

@@ -5,12 +5,9 @@ from cq_warehouse.fastener import (
     SocketHeadCapScrew,
 )
 
-if not "size" in locals():
-    size = "#0-80"
-if not "simple" in locals():
-    simple = False
-if not "length" in locals():
-    length = 10
+size = "#0-80"
+simple = False
+length = 10
 
 screw = SocketHeadCapScrew(
     size=size,
