@@ -1,6 +1,7 @@
 desc: Metric parts by cq-warehouse
 url: https://cq-warehouse.readthedocs.io/
-partcad: ">=0.2.17"
+partcad: ">=0.3.82"
+pythonVersion: 3.10
 
 {% from 'macros.j2' import list_sizes, screw_params %}
 
