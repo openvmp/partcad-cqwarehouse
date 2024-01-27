@@ -11,7 +11,7 @@
         type: str
         enum:
           {{ list_sizes(all_sizes, available_sizes) | indent(10) }}
-        default: {{ all_sizes[available_sizes[0]] }}
+        default: "{{ all_sizes[available_sizes[0]] }}"
       simple:
         type: bool
         default: False
@@ -27,9 +27,8 @@
 {%- macro screw_params2(sizes) -%}
       size:
         type: str
-        enum:
-          {{ sizes }}
-        default: {{ sizes[0] }}
+        enum: {{ sizes | map("to_json") }}
+        default: "{{ sizes[0] }}"
       simple:
         type: bool
         default: False
