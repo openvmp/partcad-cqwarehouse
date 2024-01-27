@@ -8,12 +8,14 @@ from cq_warehouse.fastener import (
 size = "M2.5-0.45"
 simple = False
 length = 10
+hand = "right"
 
 screw = CheeseHeadScrew(
     size=size,
     fastener_type="iso7048",
     length=length,
     simple=simple,
+    hand=hand,
 )
 
 show_object(screw)

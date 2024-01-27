@@ -8,7 +8,8 @@ from cq_warehouse.fastener import (
 size = "M1.6-0.35"
 simple = False
 length = 10
-socket_clearance = 6
+socket_clearance = 6.0
+hand = "right"
 
 screw = HexHeadScrew(
     size=size,
@@ -16,6 +17,7 @@ screw = HexHeadScrew(
     length=length,
     simple=simple,
     socket_clearance=socket_clearance,
+    hand=hand,
 )
 
 show_object(screw)

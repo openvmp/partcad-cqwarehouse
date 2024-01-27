@@ -8,12 +8,14 @@ from cq_warehouse.fastener import (
 size = "M1.4-0.3"
 simple = False
 length = 10
+hand = "right"
 
 screw = SetScrew(
     size=size,
     fastener_type="iso4026",
     length=length,
     simple=simple,
+    hand=hand,
 )
 
 show_object(screw)

@@ -8,12 +8,14 @@ from cq_warehouse.fastener import (
 size = "M6-1"
 simple = False
 length = 10
+hand = "right"
 
 screw = ButtonHeadWithCollarScrew(
     size=size,
     fastener_type="iso7380_2",
     length=length,
     simple=simple,
+    hand=hand,
 )
 
 show_object(screw)

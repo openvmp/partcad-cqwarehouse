@@ -8,12 +8,14 @@ from cq_warehouse.fastener import (
 size = "M3-0.5"
 simple = False
 length = 10
+hand = "right"
 
 screw = CounterSunkScrew(
     size=size,
     fastener_type="iso14582",
     length=length,
     simple=simple,
+    hand=hand,
 )
 
 show_object(screw)
