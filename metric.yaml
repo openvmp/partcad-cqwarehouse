@@ -78,12 +78,6 @@ parts:
       - fastener/iso7046
     parameters:
       {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
-  fastener/countersunk-iso7046:
-    type: cadquery
-    aliases:
-      - fastener/iso7046
-    parameters:
-      {{ screw_params(metric_sizes, [1.6,2,2.5,3,3.5,4,5,6,8,10]) }}
   fastener/countersunk-iso14582:
     type: cadquery
     aliases:
