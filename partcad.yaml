@@ -2,6 +2,8 @@ desc: |
   A collection of PartCAD packages for cq_warehouse:
   a CadQuery parametric part collection
 url: https://cq-warehouse.readthedocs.io/
+cover:
+  package: cq-warehouse-metric
 docs:
   name: cq_warehouse for PartCAD
   intro: |
